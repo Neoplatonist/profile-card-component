@@ -35,6 +35,12 @@
             background-color: var(--primary-cyan);
         }
 
+        h4,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
         .container {
             height: 100%;
             width: 100%;
@@ -192,45 +198,45 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
+    <main class="container">
+        <article class="card">
+            <header class="card-header">
                 <img class="card-profile-image" src="images/image-victor.jpg" alt="Victor Crest">
-            </div>
+            </header>
 
-            <div class="card-body">
-                <div class="card-profile">
+            <section class="card-body">
+                <h4 class="card-profile">
                     Victor Crest <span>26</span>
-                </div>
+                </h4>
 
-                <div class="card-location">
+                <p class="card-location">
                     London
-                </div>
-            </div>
+                </p>
+            </section>
 
-            <div class="card-footer">
-                <div class="card-stat">
-                    <div class="card-number">80K</div>
-                    <div class="card-description">Followers</div>
-                </div>
+            <footer class="card-footer">
+                <section class="card-stat">
+                    <p class="card-number">80K</p>
+                    <p class="card-description">Followers</p>
+                </section>
 
-                <div class="card-stat">
-                    <div class="card-number">803K</div>
-                    <div class="card-description">Likes</div>
-                </div>
+                <section class="card-stat">
+                    <p class="card-number">803K</p>
+                    <p class="card-description">Likes</p>
+                </section>
 
-                <div class="card-stat">
-                    <div class="card-number">1.4K</div>
-                    <div class="card-description">Photos</div>
-                </div>
-            </div>
-        </div>
+                <section class="card-stat">
+                    <p class="card-number">1.4K</p>
+                    <p class="card-description">Photos</p>
+                </section>
+            </footer>
+        </article>
 
         <div class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
             Coded by <a href="#">Your Name Here</a>.
         </div>
-    </div>
+    </main>
 </body>
 
 </html>
