@@ -1,35 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        :root {
+            --primary-cyan: hsl(185, 75%, 39%);
+            --primary-blue: hsl(229, 23%, 23%);
+            --primary-gray: hsl(227, 10%, 46%);
+            --secondary-gray: hsl(0, 0%, 59%);
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 62.5%;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-cyan);
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            font-size: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            opacity: 0.4;
+            background-image: url(images/bg-pattern-top.svg);
+            background-position: right 44vw top -77vw;
+            background-size: 140%;
+            background-repeat: no-repeat;
+        }
+
+        .container::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            opacity: 0.7;
+            background-image: url(images/bg-pattern-bottom.svg);
+            background-position: left 43vw bottom -100vw;
+            background-size: 185%;
+            background-repeat: no-repeat;
+        }
+
+        .card {
+            position: relative;
+            min-width: 324px;
+            min-height: 370px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .card-header {
+            display: block;
+            position: relative;
+            background-image: url(images/bg-pattern-card.svg);
+            background-position: top right -6px;
+            background-size: cover;
+            height: 37%;
+            box-shadow: 0 1px 2px var(--primary-cyan);
+        }
+
+        .card-profile-image {
+            position: absolute;
+            top: 101.5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid white;
+            border-radius: 50%;
+            padding: 1px;
+            background-color: white;
+        }
+
+        .card-body {
+            margin-top: 24%;
+            margin-bottom: 7.5%;
+            text-align: center;
+        }
+
+        .card-profile {
+            font-weight: 700;
+        }
+
+        .card-profile span {
+            margin-left: 5px;
+            font-weight: 400;
+            color: var(--primary-gray);
+        }
+
+        .card-location {
+            font-size: 1.4rem;
+            margin: 11px;
+            color: var(--primary-gray);
+        }
+
+        .card-footer {
+            height: 90px;
+            /* border-top: 1px var(--secondary-gray) solid; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px var(--secondary-gray);
+        }
+
+        .card-stat {
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .card-number {
+            font-weight: 700;
+        }
+
+        .card-description {
+            margin-top: 5px;
+            font-size: 1rem;
+            letter-spacing: 1.2px;
+            color: var(--primary-gray);
+        }
+
+        .attribution {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+
+        @media screen and (min-width: 1440px) {
+            .container::before {
+                opacity: 1;
+                background-position: right 52vw top -36vw;
+                background-size: 70%;
+            }
+
+            .container::after {
+                opacity: 0.7;
+                background-position: left 47.5vw bottom -46vw;
+                background-size: 70%;
+            }
+
+            .card {
+                min-width: 350px;
+                min-height: 375px;
+            }
+
+            .card-header {
+                background-position: top right;
+            }
+
+            .card-body {
+                margin-top: 22.2%;
+            }
+
+            .card-stat {
+                min-width: 100px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  Victor Crest
-  26
-  London
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <img class="card-profile-image" src="images/image-victor.jpg" alt="Victor Crest">
+            </div>
 
-  80K
-  Followers
+            <div class="card-body">
+                <div class="card-profile">
+                    Victor Crest <span>26</span>
+                </div>
 
-  803K
-  Likes
+                <div class="card-location">
+                    London
+                </div>
+            </div>
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+            <div class="card-footer">
+                <div class="card-stat">
+                    <div class="card-number">80K</div>
+                    <div class="card-description">Followers</div>
+                </div>
+
+                <div class="card-stat">
+                    <div class="card-number">803K</div>
+                    <div class="card-description">Likes</div>
+                </div>
+
+                <div class="card-stat">
+                    <div class="card-number">1.4K</div>
+                    <div class="card-description">Photos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="#">Your Name Here</a>.
+        </div>
+    </div>
 </body>
+
 </html>
